@@ -17,4 +17,19 @@ app.get("/", (req, res) => {
     res.send("Hello World");
 });
 
+io.on("connection", (socket) => {
+    socket.emit('me', socket.id);
+    socket.on("disconnect", () => {
+        socket.broadcast.emit("user-disconnected", socket.id);
+    } );
+
+    socket.on("calluser", ({userToCall, signalData, from, name}) => {
+        io.to(userToCall).emit("calluser", {signalData, from, name});
+    } );
+
+    socket.on("accept-call", ({signalData, from, name}) => {    
+        io.to(from).emit("accept-call", {signalData, name});
+    } );
+});
+
 server.listen(port, () => console.log(`Server is running on port ${port}`));
