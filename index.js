@@ -28,7 +28,7 @@ io.on("connection", (socket) => {
     } );
 
     socket.on("accept-call", ({signalData, from, name}) => {    
-        io.to(from).emit("accept-call", {signalData, name});
+        io.to(from).emit("accept-call", {signalData, from, name});
     } );
 });
 
