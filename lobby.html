@@ -6,19 +6,22 @@
     <title>PeerChat</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='lobby.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     
     <main id="lobby-container">
         <div id="form-container">
             <div id="form__container__header">
-                <p>👋 Create OR Join a Room</p>
+                <p class="inter">👋 Create or join a room</p>
             </div>
 
             <div id="form__content__wrapper">
-                <form id="join-form">
+                <form id="join-form" class="inter">
                     <input type="text" name="invite_link" required/>
-                    <input type="submit" value="Join Room" />
+                    <input class="inter" type="submit" value="Join Room" />
                 </form>
             </div>
         </div>

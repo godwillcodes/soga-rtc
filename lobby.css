@@ -1,7 +1,11 @@
 body{
     background-color: #1a1a1a;
     color: #fff;
+    font-family: 'Inter', sans-serif;
 }
+
+.inter{font-family: 'Inter', sans-serif;}
+
 
 #form-container{
     width: 90%;
